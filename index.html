@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Verification</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body style="background-color: rgb(235, 235, 235);">
+   <heading>
+    <div class="w-50 p-3 shadow-lg p-3 m-auto rounded mt-5 text-center" style="background-color: #9cc68f;">
+        <h1> Email Address Verification Form</h1>
+        </div>
+        <br><br>
+        
+        <div class="input-group m-auto w-50 bg-dark rounded">
+        
+            <input id="email" type="text" class="form-control" placeholder="Recipient's Email Address" aria-label="Recipient's username" aria-describedby="button-addon2">
+            
+            <button id="btn" class="btn btn-outline-secondary text-center text-light " type="button" id="button-addon2" onclick="verify()"> Verify </button>
+        </div>
+          </div>
+   </heading>
+<section>
+    <div>
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+             <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+              </symbol>
+              <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+              </symbol>
+        </svg>
+        <div id="true" class="alert alert-success align-items-center w-50 mx-auto mt-5" role="alert">
+            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+            <div>
+             This is a valid email.
+            </div>
+        </div>
+        <div id="false"  class="alert alert-danger  align-items-center w-50 mx-auto mt-5" role="alert">
+            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+            <div>
+              Invalid email.
+            </div>
+        </div>
+    
+    </div>
+    <div>
+        <p id="warning" class="bg-warning text-light mt-5 mx-auto p-3 w-50 rounded">
+            Please, input an email address.
+        </p>
+    </div>
+</section>
+
+<section class="mx-auto mb-5 mt-5 w-75">
+    <p><b><u>Details of validating the email:</u><br>An email is a string (a subset of ASCII characters) separated into two parts by @ symbol. a "personal_info" and a domain, that is personal_info@domain. The length of the personal_info part may be up to 64 characters long and domain name may be up to 253 characters. The personal_info part contains the following ASCII characters.</b></p>
+<ul class="w-75">
+<li>Uppercase (A-Z) and lowercase (a-z) English letters.</li>
+<li>Digits (0-9).</li>
+<li>Characters ! # $ % & ' * + - / = ? ^ _ ` { | } ~
+    Character . ( period, dot or fullstop) provided that it is not the first or last character and it will not come one after the other.
+    The domain name [for example com, org, net, in, us, info] part contains letters, digits, hyphens, and dots.</li></ul>
+
+<h3>Example of valid email id</h3>
+<ul>
+       <li>mysite@ourearth.com</li>
+       <li>my.ownsite@ourearth.org</li>
+       <li>mysite@you.me.net</li>
+</ul>
+<h3>Example of invalid email id</h3>
+<br>
+mysite.ourearth.com [@ is not present]<br>
+mysite@.com.my [ tld (Top Level domain) can not start with dot "." ]<br>
+@you.me.net [ No character before @ ]<br>
+mysite123@gmail.b [ ".b" is not a valid tld ]<br>
+mysite@.org.org [ tld can not start with dot "." ]<br>
+.mysite@mysite.org [ an email should not be start with "." ]<br>
+mysite()*@gmail.com [ here the regular expression only allows character, digit, underscore, and dash ]<br>
+mysite..1234@yahoo.com [double dots are not allowed]<br>
+
+</section>
+
+    <script src="app.js"></script>
+</body>
+</html>
